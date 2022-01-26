@@ -3,6 +3,8 @@ package com.mohit;
 import com.mohit.data_structures.Queue.MLinkedListQueue;
 import com.mohit.data_structures.Node;
 import com.mohit.data_structures.TreeNode;
+import com.mohit.tree_questions.HeightOfTree;
+import com.mohit.tree_questions.PrintNodesAtDistanceK;
 
 import java.io.*;
 import java.util.ArrayDeque;
@@ -84,18 +86,23 @@ class Main {
             treeNode.right.left = new TreeNode(40);
             treeNode.right.right = new TreeNode(50);
 
-            System.out.println("In Order Traversal");
-            inOrderTraversal(treeNode);
-            System.out.println("Pre Order Traversal");
-            preOrderTraversal(treeNode);
-            System.out.println("Post Order Traversal");
-            postOrderTraversal(treeNode);
+            System.out.println("height of tree is : " + HeightOfTree.getHeightOfTree(treeNode));
+            PrintNodesAtDistanceK.printNodesAtDistanceK(treeNode, 2);
+
             f.close();
         }catch (Exception e) {
             e.printStackTrace();
         }
     }
 
+    static void DFS(TreeNode treeNode) {
+        System.out.println("In Order Traversal");
+        inOrderTraversal(treeNode);
+        System.out.println("Pre Order Traversal");
+        preOrderTraversal(treeNode);
+        System.out.println("Post Order Traversal");
+        postOrderTraversal(treeNode);
+    }
 
     static void inOrderTraversal(TreeNode node) {
         if (node != null) {
