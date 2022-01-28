@@ -3,8 +3,7 @@ package com.mohit;
 import com.mohit.data_structures.Queue.MLinkedListQueue;
 import com.mohit.data_structures.Node;
 import com.mohit.data_structures.TreeNode;
-import com.mohit.tree_questions.HeightOfTree;
-import com.mohit.tree_questions.PrintNodesAtDistanceK;
+import com.mohit.tree_questions.*;
 
 import java.io.*;
 import java.util.ArrayDeque;
@@ -82,12 +81,30 @@ class Main {
 
             TreeNode treeNode = new TreeNode(10);
             treeNode.left = new TreeNode(20);
-            treeNode.right = new TreeNode(30);
+            treeNode.right = new TreeNode(80);
             treeNode.right.left = new TreeNode(40);
             treeNode.right.right = new TreeNode(50);
 
             System.out.println("height of tree is : " + HeightOfTree.getHeightOfTree(treeNode));
             PrintNodesAtDistanceK.printNodesAtDistanceK(treeNode, 2);
+            LevelOrderTraversal.printLevelOrderTraversal(treeNode);
+
+            TreeNode node1 = new TreeNode(2);
+            node1.left = new TreeNode(1);
+            node1.right = new TreeNode(4);
+
+            TreeNode node2 = new TreeNode(1);
+            node2.left = new TreeNode(0);
+            node2.right = new TreeNode(3);
+
+            //System.out.println("result : "+ new AllElementsinTwoBinarySearchTrees().printAllElementsinTwoBinarySearchTrees(node1, node2));
+            System.out.println("\n");
+            LevelOrderTraversal.printLevelOrderTraversalLineByLine(treeNode);
+
+            LevelOrderTraversal.printLevelOrderTraversalThirdMethod(treeNode);
+
+            System.out.println("size of tree : " + new SizeOfBinaryTree().getSize(node1));
+            System.out.println("Maximum in tree : " + new MaximumInBinaryTree().getMax(treeNode));
 
             f.close();
         }catch (Exception e) {
