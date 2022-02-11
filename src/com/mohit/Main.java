@@ -1,14 +1,14 @@
 package com.mohit;
 
-import com.mohit.data_structures.Queue.MLinkedListQueue;
 import com.mohit.data_structures.Node;
 import com.mohit.data_structures.TreeNode;
+import com.mohit.recursion.AddTwoNumber;
+import com.mohit.recursion.SubSequencesOfArray;
 import com.mohit.tree_questions.*;
+import com.mohit.tree_questions.binary_search_tree.SearchBST;
 
 import java.io.*;
-import java.util.ArrayDeque;
-import java.util.Queue;
-import java.util.StringTokenizer;
+import java.util.*;
 
 class Main {
     static class FastReader {
@@ -106,10 +106,214 @@ class Main {
             System.out.println("size of tree : " + new SizeOfBinaryTree().getSize(node1));
             System.out.println("Maximum in tree : " + new MaximumInBinaryTree().getMax(treeNode));
 
+            new ViewOfBinaryTree().printView(treeNode);
+
+
+            TreeNode sumTree = new TreeNode(10);
+            sumTree.left = new TreeNode(8);
+            sumTree.right = new TreeNode(1);
+
+            System.out.println("Is sum : " + new ChildrenSumProperty().isSum(sumTree));
+
+            f1(10);
+
+            print1ToN(10);
+
+            System.out.println();
+
+            printNto1(10);
+
+
+
+
+
+            Node node3 = new Node(2);
+            node3.next = new Node(4);
+            node3.next.next = new Node(3);
+
+            Node node4 = new Node(5);
+            node4.next = new Node(6);
+            node4.next.next = new Node(4);
+
+            Node head = new AddTwoNumber().addNumber(node3, node4);
+
+            System.out.println("Adding two number");
+            while (head != null) {
+                System.out.println(head.data);
+                head = head.next;
+            }
+
+
+            System.out.println("Maximum width: " + new MaximumWidthOfBinaryTree().getWidth(treeNode));
+
+
+            int[] arrays = {1,2,3,4,5};
+            reverse(arrays, 0, arrays.length);
+            for (int i = 0; i < arrays.length; i++) {
+                System.out.print(arrays[i]+" ");
+            }
+
+
+            TreeNode btToDLL = new TreeNode(10);
+            btToDLL.left = new TreeNode(5);
+            btToDLL.right = new TreeNode(20);
+            btToDLL.right.left = new TreeNode(30);
+            btToDLL.right.right = new TreeNode(35);
+
+            System.out.println("bt to dll");
+            TreeNode dll = new ConvertBinaryTreeToDLL().convert(btToDLL);
+            printDLL(dll);
+
+
+            System.out.println("Palindrome check");
+            String s1 = "A man, a plan, a canal: Panama".replaceAll("[^A-Za-z0-9]", "").toLowerCase();
+
+
+            String[] words = {"abc","car","ada","racecar","cool"};
+            for (int i = 0; i < words.length; i++) {
+                if (palindrome(words[i], 0, words[i].length())) {
+                    System.out.println(words[i]);
+                    break;
+                }
+            }
+
+            System.out.println(palindrome(s1, 0, s1.length()));
+
+
+            System.out.println("construct tree");
+            int[] in = {20, 10, 40, 30, 50};
+            int[] pre = {10, 20, 30, 40, 50};
+            TreeNode constructedTree = new ConstructBinaryTreeFromInorderAndPreorder().cTree(in, pre, 0, in.length-1);
+
+            System.out.println("In Order Traversal after constructed tree");
+            inOrderTraversal(constructedTree);
+
+            System.out.println("\nPre Order Traversal after constructed tree");
+            preOrderTraversal(constructedTree);
+
+
+            System.out.println("Sub Sequences");
+            int[] sp = {1,2};
+            List<Integer> list = new ArrayList<>();
+            new SubSequencesOfArray().subSequence(0, sp.length, sp, list);
+
+            String s2 = "abb";
+            System.out.println(s2.isEmpty() ? 0 : (s2.equals(new StringBuilder(s2).reverse().toString()) ? 1 : 2));
+
+
+            System.out.println("Tree Traversal in Spiral Form");
+
+            TreeNode spiralTraversalNode = new TreeNode(1);
+            spiralTraversalNode.left = new TreeNode(2);
+            spiralTraversalNode.right = new TreeNode(3);
+
+            spiralTraversalNode.left.left = new TreeNode(4);
+            spiralTraversalNode.left.right = new TreeNode(5);
+
+            spiralTraversalNode.left.left.left = new TreeNode(8);
+            spiralTraversalNode.left.left.right = new TreeNode(9);
+
+            spiralTraversalNode.right.left = new TreeNode(6);
+            spiralTraversalNode.right.right = new TreeNode(7);
+
+            spiralTraversalNode.right.left.left = new TreeNode(10);
+
+            new TreeTraversalInSpiralForm().spiralTraversalMethod2(spiralTraversalNode);
+
+
+            TreeNode diameter = new TreeNode(10);
+            diameter.left = new TreeNode(20);
+            diameter.right = new TreeNode(30);
+            diameter.right.left = new TreeNode(40);
+            diameter.right.right = new TreeNode(60);
+            diameter.right.left.left = new TreeNode(50);
+            diameter.right.right.right = new TreeNode(70);
+
+            System.out.println();
+            System.out.println("o(n2)" + new DiameterOfBinaryTree().diameter(diameter));
+            System.out.println("Dia meter of binary tree" + new DiameterOfBinaryTree().diameterWithHeight(diameter));
+
+
+//            System.out.println("system : " + System.getProperty("java.home"));
+//
+//            String directory = System.getProperty("user.home")+"/mohit";
+//
+//            File file = new File(directory);
+//            if (!file.exists())
+//                file.mkdir();
+//
+//            File textFile = new File(directory+"/mohit.txt");
+//            if (textFile.createNewFile()){
+//                System.out.println("create a file.");
+//            }
+
+
+            TreeNode bstRoot = new TreeNode(15);
+            bstRoot.left = new TreeNode(5);
+            bstRoot.left.left = new TreeNode(3);
+
+            bstRoot.right = new TreeNode(20);
+            bstRoot.right.left = new TreeNode(18);
+            bstRoot.right.left.left = new TreeNode(16);
+
+            bstRoot.right.right = new TreeNode(80);
+
+
+            System.out.println("Search in binary search tree " + new SearchBST().searchBST(bstRoot, 4));
+
             f.close();
         }catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    static boolean palindrome(String s, int i, int size) {
+        if (s.isEmpty()) return true;
+        if (i >= size) return true;
+        if (s.charAt(i) != s.charAt(size - i - 1)) return false;
+
+        return palindrome(s, i+1, size);
+    }
+
+    static void printDLL(TreeNode treeNode) {
+        while (treeNode != null) {
+            System.out.print(treeNode.data+" ");
+            treeNode = treeNode.right;
+        }
+    }
+
+    static void reverse(int[] list, int left, int n) {
+        if (left >= n/2) return;
+        swap(list, left, n - left - 1);
+        reverse(list, left+1,n);
+    }
+
+    static void swap(int[] array, int left, int right) {
+        int temp = array[right];
+        array[right] = array[left];
+        array[left] = temp;
+    }
+
+    static void f1(int num) {
+        if (num == 0) return;
+        System.out.println("Mohit");
+        num--;
+        f1(num);
+    }
+
+    static int n = 1;
+    static void print1ToN(int num) {
+        if (n == num) return;
+        System.out.println(n);
+        n++;
+        print1ToN(num);
+    }
+
+    static void printNto1(int num) {
+        if (num == 0) return;
+        System.out.println(num);
+        num--;
+        printNto1(num);
     }
 
     static void DFS(TreeNode treeNode) {
