@@ -5,6 +5,9 @@ import com.mohit.data_structures.TreeNode;
 import com.mohit.recursion.AddTwoNumber;
 import com.mohit.recursion.SubSequencesOfArray;
 import com.mohit.tree_questions.*;
+import com.mohit.tree_questions.binary_search_tree.CeilingOnTheLeftSideOfArray;
+import com.mohit.tree_questions.binary_search_tree.FloorInBST;
+import com.mohit.tree_questions.binary_search_tree.InsertBST;
 import com.mohit.tree_questions.binary_search_tree.SearchBST;
 
 import java.io.*;
@@ -260,6 +263,66 @@ class Main {
 
 
             System.out.println("Search in binary search tree " + new SearchBST().searchBST(bstRoot, 4));
+
+            System.out.println("floor " + (new FloorInBST().getFloor(bstRoot, 17)).data);
+
+            TreeNode insertion = new TreeNode(10);
+            insertion.left = new TreeNode(8);
+
+            TreeNode newInserted = new InsertBST().insertBST(insertion, 12);
+
+            System.out.println(newInserted.right.data);
+
+            TreeSet<String> treeSet = new TreeSet<>();
+            treeSet.add("Mohit");
+            treeSet.add("Mobile");
+            treeSet.add("Aka");
+            treeSet.add("Aka");
+            treeSet.add("aka");
+
+            System.out.println(treeSet);
+
+
+
+            Node nodeHead = new Node(-1);
+            nodeHead.next = new Node(5);
+            nodeHead.next.next  = new Node(3);
+            nodeHead.next.next.next = new Node(4);
+            nodeHead.next.next.next.next = new Node(0);
+
+            List<Integer> numbers = new ArrayList<>();
+
+            while (nodeHead != null) {
+                numbers.add(nodeHead.data);
+                nodeHead = nodeHead.next;
+            }
+
+            Collections.sort(numbers);
+
+            System.out.println(numbers);
+
+            Node newNodeHead = new Node(numbers.get(0));
+            Node current = newNodeHead;
+            for (int i = 1; i < numbers.size(); i++) {
+                Node temp = new Node(numbers.get(i));
+                current.next = temp;
+                current = current.next;
+            }
+
+            System.out.println("new Node with sorted.");
+            while (newNodeHead != null) {
+                System.out.println(newNodeHead.data);
+                newNodeHead = newNodeHead.next;
+            }
+
+
+            System.out.println("ceilingList ");
+            new CeilingOnTheLeftSideOfArray().ceiling();
+
+
+            System.out.println("ceilingList with Self - BST");
+            new CeilingOnTheLeftSideOfArray().withBST();
+
 
             f.close();
         }catch (Exception e) {
