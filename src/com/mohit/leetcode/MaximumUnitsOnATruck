@@ -1,0 +1,27 @@
+class Box{
+    int numberOfBoxesOfTypei;
+    int numerOfUnitsPerBoxi;
+
+    Box(int numberOfBoxesOfTypei, int numerOfUnitsPerBoxi) {
+        this.numberOfBoxesOfTypei = numberOfBoxesOfTypei;
+        this.numerOfUnitsPerBoxi = numerOfUnitsPerBoxi;
+    }
+}
+
+class Solution {
+    public int maximumUnits(int[][] boxTypes, int truckSize) {
+        ArrayList<Box> boxes = new ArrayList();
+        for (int i = 0; i < boxTypes.length; i++) {
+            int[] boxType = boxTypes[i];
+            Box box = new Box(boxType[0], boxType[1]);
+            boxes.add(box);
+        }
+
+        Collections.sort(boxes, new Comparator<Box>() {
+            @override
+            int comparator(Box b1, Box b2) {
+                return b1.numerOfUnitsPerBoxi > b2.numerOfUnitsPerBoxi;
+            }
+        });
+    }
+}
