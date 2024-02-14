@@ -32,7 +32,7 @@ class Main {
         println(sb.toString());
         sb.setCharAt(0, 'M');
         println(sb.toString());
-
+        println(Arrays.deepToString(new int[][]{1,2,3,4});
     }
 
     private static void println(String s) {
