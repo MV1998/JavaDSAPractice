@@ -73,6 +73,7 @@ class Main {
                 }
                 System.out.println();
             }
+        
             println("two dimentional printing = " + Arrays.deepToString(twoArray));
 
             int[] toBeReversed = getRandomIntArray(10);
