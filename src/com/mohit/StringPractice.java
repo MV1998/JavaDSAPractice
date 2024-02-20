@@ -26,8 +26,6 @@ class Main {
         println(String.valueOf(1));
         println(""+Integer.valueOf('c'));
         println(Integer.toString(100));
-
-
         StringBuilder sb = new StringBuilder(s2);
         println(sb.toString());
         sb.setCharAt(0, 'M');
