@@ -3,7 +3,6 @@ import java.lang.*;
 
 class Main {
     public static void main(String[] strs) {
-        
         println(Arrays.toString(strs));
         int[] array1 = new int[]{3,4,5,2,1};//getRandomIntArray(10);
         
