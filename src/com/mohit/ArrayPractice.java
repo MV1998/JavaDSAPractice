@@ -53,7 +53,6 @@ class Main {
                 
             Arrays.sort(integer, Comparator.reverseOrder());
             System.out.println(Arrays.toString(integer));
-
             var s= 1;
 
             println("=".repeat(40));
