@@ -26,7 +26,6 @@ class Main {
         }else {
             println("Arrays are not equal");
         }
-
         // int[] first = getRandomIntArray(20);
 
         // Integer[] integer = new Integer[20];
