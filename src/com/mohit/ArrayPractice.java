@@ -16,7 +16,6 @@ class Main {
         if(Arrays.binarySearch(sArray, "raaj") > 0) {
             println("Raaj is present");
         }
-
         // check two arrays are equal or not
         int[] a1 = {1,2,3,4};
         int[] a2 = {1,2,3,4};
