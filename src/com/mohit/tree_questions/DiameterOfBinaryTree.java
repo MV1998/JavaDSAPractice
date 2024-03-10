@@ -15,7 +15,6 @@ public class DiameterOfBinaryTree {
         int d3 = diameter(node.right);
         return Math.max(d1, Math.max(d2, d3));
     }
-
     int res = 0;
     public int diameterWithHeight(TreeNode treeNode) {
         if (treeNode == null) return 0;
