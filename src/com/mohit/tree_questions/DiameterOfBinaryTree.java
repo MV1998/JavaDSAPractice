@@ -24,4 +24,5 @@ public class DiameterOfBinaryTree {
         res = Math.max(res, 1 + lh + rh);
         return  1 + Math.max(lh, rh);
     }
+    
 }
