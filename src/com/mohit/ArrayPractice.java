@@ -10,6 +10,7 @@ class Main {
         Arrays.sort(array1); // dual-pivot quicksort alogrithm
         println(Arrays.toString(array1));
         println(String.valueOf(Arrays.binarySearch(array1, 4)));
+
         // Sort the string array
         String[] sArray = {"Mohit", "Vaibhav", "Devendra","Raaj"};
         Arrays.sort(sArray);
