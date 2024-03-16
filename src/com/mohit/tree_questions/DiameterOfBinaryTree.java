@@ -3,6 +3,7 @@ package com.mohit.tree_questions;
 import com.mohit.data_structures.TreeNode;
 
 public class DiameterOfBinaryTree {
+    
     private int height(TreeNode node) {
         if (node == null) return 0;
         return 1 + Math.max(height(node.left), height(node.right));
